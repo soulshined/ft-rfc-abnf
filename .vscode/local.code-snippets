@@ -1,0 +1,23 @@
+{
+    "psf" : {
+        "prefix" : "psf",
+        "scope" : "php",
+        "description" : "public static function",
+        "body" : [
+            "public static function $1($2) : $3 {",
+            "\t$0",
+            "}"
+        ]
+    },
+    "bmethod" : {
+        "prefix" : "builder method",
+        "scope" : "php",
+        "description" : "",
+        "body" : [
+            "public function ${1/(.*)/${1:/upcase}/}() : RegexBuilder {",
+            "\t\\$this->pattern .= \\$this->getMethod('${1/(.*)/${1:/lowercase}/}')->regexp;",
+            "\treturn \\$this;",
+            "}"
+        ]
+    }
+}
